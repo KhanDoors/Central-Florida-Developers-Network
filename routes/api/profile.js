@@ -32,6 +32,21 @@ router.get('/', passport.authenticate('jwt', {
         .catch(err => res.status(404).json(err));
 });
 
+router.get('/all', (req, res) => {
+    const errors = {};
+
+    Profile.find()
+    .populate('user', ['name', 'avatar'])
+    .then(profiles => {
+        if(!profiles){
+            errors.noprofile = 'There are no Profiles';
+            return res.status(404).json(errors);
+        }
+        res.json(profiles);
+    })
+    .catch(err => res.status(404).json({profile:'There are no Profiles'}));
+})
+
 
 router.get('/handle/:handle', (req, res) => {
     const errors = {};
@@ -60,7 +75,7 @@ router.get('/user/:user_id', (req, res) => {
         }
         res.json(profile);
     })
-    .catch(err => res.status(404).json(err));
+    .catch(err => res.status(404).json({profile:'There is no Profile for this user'}));
 });
 
 
