@@ -54,7 +54,7 @@ router.delete('/:id', passport.authenticate('jwt', { session: false }), (req, re
 });
 
 
-
+//like post
 
 router.post('/like/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
     Profile.findOne({ user: req.user.id })
@@ -71,7 +71,7 @@ router.post('/like/:id', passport.authenticate('jwt', { session: false }), (req,
     })
 });
 
-
+//unlike like
 
 router.post('/unlike/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
     Profile.findOne({ user: req.user.id })
@@ -96,7 +96,7 @@ router.post('/unlike/:id', passport.authenticate('jwt', { session: false }), (re
 });
 
 
-
+//add comment
 
 router.post(
     '/comment/:id',
@@ -129,7 +129,30 @@ router.post(
     }
   );
 
+//Delete comment
 
+router.delete(
+    '/comment/:id/:comment_id',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+      
+  
+      Post.findById(req.params.id)
+        .then(post => {
+          if(post.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0){
+return res.status(404).json({ commentnotexists: 'Comment does not exist' });
+          }
+
+          const removeIndex = post.comments
+          .map(item => item._id.toString())
+          .indexOf(req.params.comment_id);
+
+          post.comments.splice(removeIndex, 1);
+          post.save().then(post => res.json(post));
+        })
+        .catch(err => res.status(404).json({ postnotfound: 'No post found' }));
+    }
+  );
 
 
 module.exports = router;
