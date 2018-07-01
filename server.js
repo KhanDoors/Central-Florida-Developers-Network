@@ -15,7 +15,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 //Connect to MongoDB
-mongoose.connect("mongodb://localhost/cfdn");
+mongoose.connect("mongodb://localhost/cfdn")
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.log(err));
 
 
 //passport middleware
