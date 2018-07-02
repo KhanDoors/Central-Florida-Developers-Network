@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
 import { loginUser } from '../../actions/authActions';
 import TextFieldGroup from '../common/TextFieldGroup';
-
 
  class Login extends Component {
   constructor() {
@@ -43,18 +41,15 @@ if(nextProps.errors){
       password: this.state.password,
     }
     
-    this.props.loginUser(userData);
-    
+    this.props.loginUser(userData);    
     }
 
     onChange(e) {
       this.setState({ [e.target.name]: e.target.value});
       }
 
-
   render() {
 const { errors } = this.state;
-
     return (
       <div className="login">
     <div className="container">
