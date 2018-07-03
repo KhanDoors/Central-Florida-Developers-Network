@@ -20,14 +20,14 @@ export const getCurrentProfile = () => dispatch => {
 }
 
 
-export const clearCurrentProfile = () => {
+export const setProfileLoading  = () => {
     return {
         type: PROFILE_LOADING
     };
 };
 
 
-export const setProfileLoading = () => {
+export const clearCurrentProfile = () => {
     return {
         type: CLEAR_CURRENT_PROFILE
     };
