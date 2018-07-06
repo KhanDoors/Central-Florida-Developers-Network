@@ -31,6 +31,18 @@ export const createProfile= (profileData, history) => dispatch => {
     );
 };
 
+export const addExperience = (exData, history) => dispatch => {
+    axios
+    .post('/api/profile/experience', exData)
+    .then(res => history.push('/dashboard'))
+    .catch(err =>
+    dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+    })
+    );
+}
+
 export const deleteAccount = () => dispatch => {
     if(window.confirm('Please confirm, there is no going back on this')) {
         axios
