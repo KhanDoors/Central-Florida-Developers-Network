@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 
@@ -39,9 +38,9 @@ import PropTypes from 'prop-types';
           <div className="row">
             <div className="col-md-6">
               <h4>
-                <Link to={repo.html_url} className="text-info" target="_blank">
-                  {repo.name}
-                </Link>
+                <a href={repo.html_url} className="text-info" target="_blank">
+                  {"https://repo.name"}
+                </a>
               </h4>
               <p>{repo.description}</p>
             </div>
