@@ -39,7 +39,7 @@ import PropTypes from 'prop-types';
             <div className="col-md-6">
               <h4>
                 <a href={repo.html_url} className="text-info" target="_blank">
-                  {"https://repo.name"}
+                {repo.name}
                 </a>
               </h4>
               <p>{repo.description}</p>
