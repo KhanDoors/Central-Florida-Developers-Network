@@ -46,7 +46,7 @@ const guestLinks = (
   );
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+        <nav className="navbar navbar-expand-sm bg-dark text-danger mb-4">
         <div className="container">
           <Link className="navbar-brand" to="/">CFDN</Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
