@@ -42,7 +42,7 @@ onDeleteClick(e) {
          } else {
           dashboardContent = (
             <div>
-              <p className="lead text-muted">Welcome { user.name }</p>
+              <p className="lead text-dark">Welcome { user.name }</p>
               <p>Please set up your Profile</p>
               <Link to="/create-profile" className="btn btn-lg btn-info">
               Create Profile
@@ -57,7 +57,7 @@ onDeleteClick(e) {
         <div className="container">
           <div className="row">
               <div className="col-md-12">
-                <h1 className="display-4">Dashboard</h1>
+                <h1 className="display-4">SplashBoard</h1>
                 {dashboardContent}
               </div>
           </div>

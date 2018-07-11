@@ -18,10 +18,10 @@ const { isAuthenticated, user } = this.props.auth;
 const authLinks = (
 <ul className="navbar-nav ml-auto">
 <li className="nav-item">
-                  <Link className="nav-link" to="/feed">Post Feed</Link>
+                  <Link className="nav-link" to="/feed">Posts</Link>
                 </li> 
 <li className="nav-item">
-                  <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                  <Link className="nav-link" to="/dashboard">SplashBoard</Link>
                 </li>              
               <li className="nav-item">
      <a href="" onClick={this.onLogoutClick.bind(this)} className="nav-link">
