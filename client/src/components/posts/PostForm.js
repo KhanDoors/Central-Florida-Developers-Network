@@ -51,7 +51,7 @@ import { addPost } from '../../actions/postActions';
     return (
         <div className="post-form mb-3">
         <div className="card card-info">
-          <div className="card-header bg-primary text-white">What's up?</div>
+          <div className="card-header bg-warning text-white">What's up?</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">

@@ -265,10 +265,10 @@ import isEmpty from '../../validation/is-empty';
                     }}className="btn btn-light">
                     Add your Social Media Links
                 </button>
-                <span className="text-muted">Optional</span>
+                <span className="text-dark">Optional</span>
             </div>
             {socialInputs}
-            <input type="submit" value="Submit" className="btn btn-info btn-block mt-4" />
+            <input type="submit" value="Submit" className="btn btn-success btn-block mt-4" />
       </form>
       </div>
       </div>

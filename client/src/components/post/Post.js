@@ -34,8 +34,8 @@ import { getPost } from '../../actions/postActions';
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <Link to="/feed" className="btn btn-light mb-3">
-                Back To Feed
+              <Link to="/feed" className="btn btn-dark mb-3">
+                Back To Posts
               </Link>
               {postContent}
             </div>
