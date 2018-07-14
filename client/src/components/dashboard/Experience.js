@@ -23,7 +23,7 @@ class Experience extends Component {
         <td>
           <button
             onClick={this.onDeleteClick.bind(this, exp._id)}
-            className="btn btn-secondary">Delete</button>
+            className="btn btn-danger">Delete</button>
         </td>
       </tr>
     ));
