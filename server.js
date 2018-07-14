@@ -20,6 +20,10 @@ mongoose.connect("mongodb://localhost/cfdn")
 .catch(err => console.log(err));
 
 
+if (process.env.NODE_ENV === "production") {
+   app.use(express.static("client/build"));
+}
+
 //passport middleware
 app.use(passport.initialize());
 
